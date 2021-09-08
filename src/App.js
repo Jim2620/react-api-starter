@@ -1,4 +1,4 @@
-import './App.css';
+import "./App.css";
 
 //Import router component
 import { Switch, Route } from "react-router-dom";
@@ -11,10 +11,12 @@ import Welcome from "./components/welcome/Welcome";
 
 //Import user related components
 import UserList from "./components/userList/UserList";
-import User from './components/user/User';
+import User from "./components/user/User";
 
 //Import NoMath (404) Component
 import NoMatch from "./components/noMatch/NoMatch";
+
+import Jeopardy from "./components/jeopardy/Jeopardy";
 
 function App() {
   return (
@@ -28,24 +30,11 @@ function App() {
       {/* Define Routes to different components based on URL */}
 
       <Switch>
-        <Route
-          exact
-          path="/"
-          component={Welcome}
-        />
-        <Route
-          exact
-          path="/users"
-          component={UserList}
-        />
-        <Route
-          path="/user/:id"
-          component={User}
-        />
-        <Route
-          path="*"
-          component={NoMatch}
-        />
+        <Route exact path="/" component={Welcome} />
+        <Route exact path="/users" component={UserList} />
+        <Route path="/user/:id" component={User} />
+        <Route exact path="/jeopardy" component={Jeopardy} />
+        <Route path="*" component={NoMatch} />
       </Switch>
     </div>
   );
